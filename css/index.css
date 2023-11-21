@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: "Playfair Display", serif;
+  color: #333;
+
+}
+section {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.section-title {
+  margin: 30px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 30px;
+  color: #333;
+
+}
+.section-p {
+  margin-top: 70px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.image-container {
+  margin-top: 35px;
+  padding: 0 80px 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 24.8%;
+  height: 500px;
+  margin: auto;
+  object-fit: cover;
+}
+.front-image-img {
+  padding: 10px;
+  margin-top: 10px;
+  height: 270px;
+  
+}
+article {
+  width: 40%;
+  color: #333;
+}
+
+article h1 {
+  font-weight: normal;
+  font-size: 30px;
+  text-align: justify;
+  margin-top: 30px;
+  color: #333;
+}
+
+article p {
+  font-weight: 100;
+  font-size: 17px;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 768px) {
+  .menu-item {
+    width: calc(50% - 60px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .menu-item {
+    width: calc(100% - 60px);
+  }
+}

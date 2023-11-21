@@ -1,0 +1,17 @@
+#video-container {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+}
+
+#video {
+    width: 100%;
+    height: auto;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

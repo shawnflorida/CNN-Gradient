@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVM</title>
+    <link rel="icon" type="image/x-icon" href="/assets/pics/title-logo.png">
+    <link href="/css/nav.css" rel="stylesheet" type="text/css" />
+    <link href="/css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="/css/svm.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <nav class="navbar"></nav>
+    <script src="/js/nav.js"></script>
+
+    <div class="main-container">
+        <div class="model-contents">
+            <section id="model-desc">
+                <h1 class="section-title">Support Vector Machine (SVM)</h1>
+                <hr>
+                <img src="/assets/pics/model/svm/svm-intro.png" alt="svm explanation">
+                <p>
+                  A Support Vector Machine (SVM) is a type of supervised learning algorithm used in machine learning to solve classification and regression tasks. SVMs are based on the idea of finding the best hyperplane that separates the data into different classes or predicts the output value. A hyperplane is a subspace of one dimension less than the original space.SVMs are particularly good at solving binary classification problems, which require classifying the elements of a data set into two groups. 
+                </p>
+                <p>
+                  The key idea behind SVMs is to transform the input data into a higher-dimensional feature space. This transformation makes it easier to find a linear separation or to more effectively classify the data set.
+                </p>
+                <p>
+                  SVMs have many advantages over other machine learning algorithms, such as high accuracy, robustness to noise and outliers, and ability to work with a limited number of samples. SVMs are widely used in various domains, such as text classification, image recognition, sentiment analysis, and bioinformatics. 
+                </p>
+            </section>
+            
+
+            <section id="model-purpose">
+                <h1 class="section-title">Support Vector Machine (SVM) in Addressing Dataset Imbalance</h1>
+                <hr>
+                <p>
+                  The application of Support Vector Machine (SVM) as a powerful classifier held a pivotal position within our study dedicated to mitigating dataset imbalance challenges inherent in Filipino Sign Language Recognition. SVM, with its capacity to efficiently handle and categorize intricate 4D values within the dataset, emerged as a cornerstone in overcoming the imbalance, contributing significantly to enhancing the accurate recognition and classification of Filipino Sign Language gestures. Its adeptness in delineating distinct sign patterns despite dataset irregularities proved instrumental, ensuring robust and reliable recognition outcomes crucial for advancing sign language interpretation technologies.
+                </p>
+            </section>
+
+            <div class="container">
+                <section class="metrics">
+                    <h1 class="section-title">Support Vector Machine (SVM) Metrics</h1>
+
+                    <div class="metrics-container">
+                        <div class="inner-con1">
+                            <div class="card">
+                                <h3>Accuracy</h3>
+                                <p id="accuracy"></p>
+                            </div>
+                        </div>
+                        <div class="inner-con2">
+                            <table class="table-metrics">
+                                <thead>
+                                    <tr>
+                                        <th>Class</th>
+                                        <th>Precision</th>
+                                        <th>Recall</th>
+                                        <th>F1 Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="class"></td>
+                                        <td id="precision"></td>
+                                        <td id="recall"></td>
+                                        <td id="f1Score"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="inner-con3">
+                            <div class="card">
+                                <h3>Precision Avg</h3>
+                                <p id="precisionAvg"></p>
+                            </div>
+                            <div class="card">
+                                <h3>Recall Avg</h3>
+                                <p id="recallAvg"></p>
+                            </div>
+                            <div class="card">
+                                <h3>F1 Score Avg</h3>
+                                <p id="f1ScoreAvg"></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="matrix">
+                        <h1 class="section-title">Confusion Matrix</h1>
+                        <img id="confusionMatrixImage" class="matrix" type="image" alt="confusion matrix">
+                </section>
+            </div>
+
+            <div class="gallery">
+                <h1 class="section-title">SVM Predictions</h1>
+                <div class="line"></div>
+                <div>
+                    <h1 class="section-title" id="gallery-title">Correct Predictions</h1>
+                    <div id="correctGallery" class="gallery-container"></div>
+                </div>
+                <div>
+                    <h1 class="section-title" id="gallery-title">Wrong Predictions</h1>
+                    <div id="wrongGallery" class="gallery-container"></div>
+                </div>
+            
+                <script src="/js/svm.js"></script>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <footer class="footer"></footer>
+    <script src="/js/footer.js"></script>
+    <script src="https://kit.fontawesome.com/b75e76cb79.js" crossorigin="anonymous"></script>
+</body>
+</html>

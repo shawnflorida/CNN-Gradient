@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>vercingetorix. | SMOTE</title>
+    <link rel="icon" type="image/x-icon" href="/assets/pics/title-logo.png" />
+    <link href="/css/nav.css" rel="stylesheet" type="text/css" />
+    <link href="/css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="/css/smote.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <nav class="navbar"></nav>
+    <script src="/js/nav.js"></script>
+
+    <div class="main-container">
+      <div class="model-contents">
+        <section id="model-desc">
+          <h1 class="section-title">
+            Synthetic Minority Over-sampling Technique: Background
+          </h1>
+          <hr />
+          <img
+            src="/assets/pics/model/smote/smote.png"
+            alt="smote"
+            style="
+              float: right;
+              padding: 10px;
+              width: 100%;
+              max-width: 400px;
+              height: auto;
+            "
+          />
+          <p>
+            SMOTE, which stands for Synthetic Minority Over-sampling Technique,
+            is an algorithm used in the field of machine learning and data
+            mining to address the class imbalance problem. Class imbalance
+            occurs when one class in a classification problem has significantly
+            fewer instances than the other class or classes. This can lead to
+            biased models that perform poorly on the minority class.
+          </p>
+          <p>
+            SMOTE was introduced to address this issue by oversampling the
+            minority class, creating synthetic examples rather than simply
+            duplicating existing ones. The algorithm works as follows:
+          </p>
+
+          <ol>
+            <li>
+              <strong>Selection of a Minority Instance:</strong> SMOTE randomly
+              selects an instance from the minority class.
+            </li>
+            <li>
+              <strong>Selection of k Nearest Neighbors:</strong> It then
+              identifies k nearest neighbors for the selected instance. The
+              value of k is a parameter specified by the user.
+            </li>
+            <li>
+              <strong>Generation of Synthetic Instances:</strong> SMOTE creates
+              synthetic instances by interpolating between the selected instance
+              and its k nearest neighbors. This is done by choosing random
+              values for each attribute and creating a new instance.
+            </li>
+            <li>
+              <strong>Repeat:</strong> Steps 1-3 are repeated until the desired
+              balance between the minority and majority classes is achieved.
+            </li>
+          </ol>
+        </section>
+
+        <section id="model-purpose">
+          <h1 class="section-title">SMOTE as approach to Class Imbalance</h1>
+          <hr />
+          <p>
+            SMOTE (Synthetic Minority Over-sampling Technique) is a technique
+            commonly used in the context of imbalanced datasets in machine
+            learning. However, its application in image processing training
+            might not be as straightforward as in tabular data. SMOTE is
+            typically used with feature vectors, and applying it directly to
+            image data might not yield meaningful results.
+          </p>
+
+          <p>
+            In image processing, particularly for training deep learning models
+            such as Convolutional Neural Networks (CNNs), there are other
+            techniques and considerations to address class imbalance:
+          </p>
+          <ol>
+            <li>
+              <strong>Data Augmentation:</strong> Instead of generating
+              synthetic samples, data augmentation involves applying various
+              transformations to the existing images, such as rotation,
+              flipping, scaling, and changes in brightness or contrast. This can
+              effectively increase the size of your training dataset and improve
+              model generalization.
+            </li>
+            <li>
+              <strong>Weighted Loss Functions:</strong> Modify the loss function
+              to assign different weights to different classes. This way, the
+              model pays more attention to the minority class during training.
+            </li>
+            <li>
+              <strong>Transfer Learning:</strong> If you have a pre-trained
+              model on a large dataset, you can fine-tune it on your imbalanced
+              dataset. This leverages the knowledge gained from the larger
+              dataset and adapts it to your specific problem.
+            </li>
+            <li>
+              <strong>Ensemble Methods:</strong> Train multiple models and
+              combine their predictions. This can be particularly useful when
+              dealing with imbalanced datasets.
+            </li>
+            <li>
+              <strong>Use Pre-trained Models:</strong> Utilize pre-trained
+              models like those available in deep learning frameworks. Fine-tune
+              these models on your dataset to leverage their learned features.
+            </li>
+          </ol>
+          <section id="model-desc">
+            <h1 class="section-title">Takeaway</h1>
+            <p>
+              With SMOTE as an approach to class imbalance in image recognition
+              is not the ideal solution to train well with a very limited
+              dataset. Having only 55% accuracy, low precision and recall will
+              result to bad predictive model. The sensible reason behind this
+              poor performance is because produced instances are located mostly
+              within noisy and overlapping areas, not to mention that the
+              synthetic instances are unrealistic which is sensitive especially
+              that we are dealing with sign language prediction.
+            </p>
+          </section>
+
+          <p>
+            Here are the results of the SMOTE algorithm with regards to our
+            study.
+          </p>
+        </section>
+        
+
+        <div class="container">
+            <section class="metrics">
+                <h1 class="section-title">ResNet50 Metrics</h1>
+
+                <div class="metrics-container">
+                    <div class="inner-con1">
+                        <div class="card">
+                            <h3>Accuracy</h3>
+                            <p id="accuracy"></p>
+                        </div>
+                    </div>
+                    <div class="inner-con2">
+                        <table class="table-metrics">
+                            <thead>
+                                <tr>
+                                    <th>Class</th>
+                                    <th>Precision</th>
+                                    <th>Recall</th>
+                                    <th>F1 Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="class"></td>
+                                    <td id="precision"></td>
+                                    <td id="recall"></td>
+                                    <td id="f1Score"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="inner-con3">
+                        <div class="card">
+                            <h3>Precision Avg</h3>
+                            <p id="precisionAvg"></p>
+                        </div>
+                        <div class="card">
+                            <h3>Recall Avg</h3>
+                            <p id="recallAvg"></p>
+                        </div>
+                        <div class="card">
+                            <h3>F1 Score Avg</h3>
+                            <p id="f1ScoreAvg"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="matrix">
+                    <h1 class="section-title">Confusion Matrix</h1>
+                    <img id="confusionMatrixImage" class="matrix" type="image" alt="confusion matrix">
+            </section>
+        </div>
+
+        <div class="gallery">
+            <h1 class="section-title">ResNet50 Predictions</h1>
+            <div class="line"></div>
+            <div>
+                <h1 class="section-title" id="gallery-title">Correct Predictions</h1>
+                <div id="correctGallery" class="gallery-container"></div>
+            </div>
+            <div>
+                <h1 class="section-title" id="gallery-title">Wrong Predictions</h1>
+                <div id="wrongGallery" class="gallery-container"></div>
+            </div>
+        
+        </div>
+       
+
+
+        </div>
+
+        <script src="/js/smote.js"></script>
+
+       
+      </div>
+    </div>
+
+    <footer class="footer"></footer>
+    <script src="/js/footer.js"></script>
+    <script
+      src="https://kit.fontawesome.com/b75e76cb79.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

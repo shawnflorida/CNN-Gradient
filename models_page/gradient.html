@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResNet50</title>
+    <link rel="icon" type="image/x-icon" href="/assets/pics/title-logo.png">
+    <link href="/css/nav.css" rel="stylesheet" type="text/css" />
+    <link href="/css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="/css/gradient.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <nav class="navbar"></nav>
+    <script src="/js/nav.js"></script>
+
+    <div class="main-container">
+        <div class="model-contents">
+            <section id="model-desc">
+                <h1 class="section-title">Gradient Boosting</h1>
+                <hr/>
+                <img src="/assets/pics/model/gradient/gradientboosting.png" alt="Gradient Boosting">
+                <p>
+                    Gradient boosting is a machine learning technique that combines weak learners, such as decision trees, to form a strong learner. It works by iteratively adding new classifiers that focus on the cases that were misclassified in the previous round, thus improving the accuracy and performance of the model. Gradient boosting can be used to address the problem of class imbalance in sign language recognition, as it can assign different weights to different classes and minimize the loss function. Gradient boosting has been shown to have better accuracy and higher recognition efficiency than other techniques, such as CNN, GBDT, and XGBoost, for sign language recognition tasks.
+                </p>
+                <p>
+                    Gradient boosting is a machine learning technique for building predictive models, particularly for regression and classification problems. It is an ensemble learning method, meaning it combines the predictions of multiple weak learners (typically decision trees) to create a strong predictive model.
+                </p>
+                <p><i>The basic idea behind gradient boosting can be summarized as follows:</i></p>
+                <p>
+                    <strong>1. Weak Learners:</strong> Gradient boosting starts with a weak learner, often a shallow decision tree. This initial model is trained on the dataset, and its predictions are used as the first approximation.
+                </p>
+                <p>
+                    <strong>2. Residuals:</strong> The difference between the actual values and the predictions made by the weak learner (residuals) is calculated. The goal is to improve upon these residuals in the next iteration.
+                </p>
+                <p>
+                    <strong>3. Gradient Descent:</strong> In the subsequent iterations, new weak learners are added to the ensemble, and each one focuses on correcting the errors (residuals) made by the previous models. This is done by using gradient descent to minimize the loss function, which measures the difference between the predicted and actual values.
+                </p>
+                <p>
+                    <strong>4. Weighted Sum:</strong> The predictions from all weak learners are combined into a weighted sum, where each learner's contribution is determined by its performance in reducing the overall error.
+                </p>
+                <p>
+                    <strong>5. Boosting:</strong> The process is repeated for a predefined number of iterations or until a certain level of accuracy is achieved. Each new weak learner "boosts" the overall model's performance by addressing the mistakes of the previous learners.
+                </p>
+            </section>
+            
+            <section id="model-purpose">
+                <h1 class="section-title">How is Gradient Boosting used in this study?</h1>
+                <hr>
+                <div class="con">
+                    <img src="/assets/pics/model/gradient/flow-of-gradient.png" alt="Flow of Gradient Boosting">
+
+                    <div class="article">
+                        <p>
+                            Gradient Boosting is a machine learning algorithm used for classification problems in this study. It is applied to address the three types of class imbalances present in the Filipino Sign Language (FSL) dataset: class imbalance in the dataset, class imbalance during training, and class imbalance during testing. The study uses Gradient Boosting to combine weak learners, such as decision trees, to create a strong learner that can improve the accuracy and performance of FSL recognition. The study also compares the effectiveness of Gradient Boosting with other techniques, such as SMOTE and SVM,when paired with CNN for FSL recognition. The study uses various performance metrics, such as accuracy, F-1 score, recall, and precision, to evaluate the models' performances. The study also analyzes the time complexity and significant differences among the values of each FSL recognition using the three groups of algorithms (Gradient Boosting, SVM, and SMOTE).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container">
+                <section class="metrics">
+                    <h1 class="section-title">Gradient Boosting Metrics</h1>
+
+                    <div class="metrics-container">
+                        <div class="inner-con1">
+                            <div class="card">
+                                <h3>Accuracy</h3>
+                                <p id="accuracy"></p>
+                            </div>
+                        </div>
+                        <div class="inner-con2">
+                            <table class="table-metrics">
+                                <thead>
+                                    <tr>
+                                        <th>Class</th>
+                                        <th>Precision</th>
+                                        <th>Recall</th>
+                                        <th>F1 Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="class"></td>
+                                        <td id="precision"></td>
+                                        <td id="recall"></td>
+                                        <td id="f1Score"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="inner-con3">
+                            <div class="card">
+                                <h3>Precision Avg</h3>
+                                <p id="precisionAvg"></p>
+                            </div>
+                            <div class="card">
+                                <h3>Recall Avg</h3>
+                                <p id="recallAvg"></p>
+                            </div>
+                            <div class="card">
+                                <h3>F1 Score Avg</h3>
+                                <p id="f1ScoreAvg"></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="matrix">
+                        <h1 class="section-title">Confusion Matrix</h1>
+                        <img id="confusionMatrixImage" class="matrix" type="image" alt="confusion matrix">
+                </section>
+            </div>
+
+            <div class="gallery">
+                <h1 class="section-title">Gradient Boosting Predictions</h1>
+                <div class="line"></div>
+                <div>
+                    <h1 class="section-title" id="gallery-title">Correct Predictions</h1>
+                    <div id="correctGallery" class="gallery-container"></div>
+                </div>
+                <div>
+                    <h1 class="section-title" id="gallery-title">Wrong Predictions</h1>
+                    <div id="wrongGallery" class="gallery-container"></div>
+                </div>
+            
+                <script src="/js/gradient.js"></script>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <footer class="footer"></footer>
+    <script src="/js/footer.js"></script>
+    <script src="https://kit.fontawesome.com/b75e76cb79.js" crossorigin="anonymous"></script>
+</body>
+</html>

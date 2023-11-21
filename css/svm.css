@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: "Playfair Display", serif;
+    color: #333;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.model-contents {
+    margin: 0 20px;
+    max-width: 70%;
+}
+
+#model-desc img {
+    float: right;
+    padding: 10px;
+}
+
+section {
+    padding-bottom: 20px;
+}
+
+.section-title {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+
+section p {
+    font-weight: 100;
+    font-size: 17px;
+    text-align: justify;
+}
+
+.container {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.metrics {
+    width: 50%;
+}
+
+.metrics-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card {
+    background-color: #c6bfe4;
+    padding: 0 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content:space-between;
+}
+
+.card h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.card p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #495057;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #dbe8f2;
+}
+
+.inner-con3 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.matrix img {
+    max-width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery .line {
+    width: 250px;
+    height: 4px;
+    background: #780000;
+    margin: 10px auto;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery .section-title {
+    text-align: center;
+}
+
+.gallery #gallery-title {
+    font-size: 25px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h4 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+@media (max-width: 1520px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .metrics {
+        width: 80%;
+    }
+
+    .matrix img {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 1140px) {
+    .metrics {
+        width: 100%;
+    }
+
+    .matrix img {
+        max-width: 100%;
+    }
+}
+
+
+

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>vercingetorix.</title>
+  <link rel="icon" type="image/x-icon" href="assets/pics/title-logo.png">
+  <link href="css/nav.css" rel="stylesheet" type="text/css" />
+  <link href="css/footer.css" rel="stylesheet" type="text/css" />
+  <link href="css/index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <nav class="navbar"></nav>
+  <script src="js/nav.js"></script>
+
+  <div class="index-contents">
+    <p class="section-p">We delve into the challenges of building a robust FSL recognition system, tackling issues related to data set imbalance to ensure the model's effectiveness across various sign gestures.</p>
+
+
+    <!-- main front section -->
+    <h1 class="section-title"><strong>Addressing Data Set Imbalance using CNN-Gradient Boosting Applied on Filipino Sign Language Recognition</strong></h1>
+
+   
+      
+      <section>
+        <article>
+          <h1><strong>The Filipino Sign Language System</strong> </h1>
+          <hr />
+            <p>
+
+                The Filipino Sign Language System (FSL) is a rich and dynamic visual language that serves as the primary means of communication for the Deaf community in the Philippines. Developed over the years as a unique linguistic system, FSL is not merely a collection of gestures; it is a complex, expressive language with its own grammar, syntax, and vocabulary.
+
+                
+                
+            </p>
+            <p><i>
+                FSL plays a crucial role in fostering communication and connection within the Deaf community, providing a medium for self-expression, storytelling, and the sharing of thoughts and emotions. It is a vibrant part of the cultural identity of the Deaf in the Philippines, contributing to the diversity and inclusivity of the country's linguistic landscape.
+
+            </i></p>
+            <p>
+                In recent years, efforts have been made to promote the recognition and understanding of FSL at both national and international levels. The acknowledgment of FSL as the official sign language of the Philippines reflects a commitment to inclusivity and accessibility, recognizing the linguistic rights of the Deaf population.
+
+            </p>
+            <p>
+                As we delve into the intricacies of the Filipino Sign Language System, we discover a fascinating world of communication that goes beyond spoken words, highlighting the importance of embracing and celebrating linguistic diversity in all its forms.  
+
+            </p>
+
+            <p> The sign languages are
+                <strong>"afternoon":</strong> 0,
+                <strong>"are":</strong> 1,
+                <strong>"evening":</strong> 2,
+                <strong>"good":</strong> 3,
+                <strong>"hard":</strong> 4,
+                <strong>"hello":</strong> 5,
+                <strong>"how":</strong> 6,
+                <strong>"morning":</strong> 7,
+                <strong>"of-hearing":</strong> 8,
+                <strong>"thank":</strong> 9,
+                <strong>"today":</strong> 10,
+                <strong>"tomorrow":</strong> 11,
+                <strong>"understand":</strong> 12,
+                <strong>"you":</strong> 13.
+                These numerical values can be utilized for various purposes, such as indexing, encoding, or any application where a numerical representation of these specific words is needed.
+            </p>
+            
+  
+
+              </article>
+              <input type="image" class="front-image-img" src="assets/pics/index/fsl.png" alt="girl sitting on the mountain top" />
+
+      </section>
+
+      <section>
+        <input type="image" class="front-image-img" src="assets/pics/index/imbalance.png" alt="girl sitting on the mountain top" />
+        <article>
+          <h1><strong>The Limitation of Data Imbalance on Layering </strong></h1>
+          <hr />
+          <p>
+            Data imbalance refers to a situation in a classification problem where the distribution of classes is not uniform. In other words, one class has significantly more instances than another class or classes. This can be a common issue in real-world datasets, and it can pose challenges for machine learning models, particularly in binary classification problems where there are only two classes.
+
+            <h1 style="font-size: large;">
+                <i>Problems associated with data imbalance:</i>
+            </h1>
+            
+            <p>
+                <strong>Biased Models:</strong> When a dataset is imbalanced, the model tends to be biased towards the majority class. As a result, the model may not generalize well to the minority class, leading to poor performance on instances from that class.
+            </p>
+            
+            <p>
+                <strong>Poor Predictive Performance:</strong> Imbalanced datasets can lead to models with poor predictive performance, especially for the minority class. The model may have high accuracy overall, but it might struggle to correctly identify instances of the minority class.
+            </p>
+            
+            <p>
+                <strong>Misleading Evaluation Metrics:</strong> Traditional evaluation metrics such as accuracy can be misleading in the presence of imbalanced data. A model that predicts the majority class for every instance can achieve high accuracy but fails to provide meaningful insights.
+            </p>
+            
+            <p>
+                <strong>Sensitivity to Outliers:</strong> Imbalanced datasets may be more sensitive to outliers, particularly in the minority class. Outliers can have a more significant impact on the model's learning process, leading to suboptimal performance.
+            </p>
+            
+            <p>
+                <strong>Difficulty in Learning Minority Patterns:</strong> Machine learning models often have difficulty learning patterns in the minority class when it is underrepresented. The lack of sufficient examples makes it challenging for the model to discern relevant features and relationships.
+            </p>
+            
+            <p>
+                <strong>Difficulty in Generalization:</strong> Imbalanced datasets can lead to models that do not generalize well to new, unseen data, especially for the minority class. The model might perform well on the training data but struggle when exposed to imbalanced patterns in real-world scenarios.
+            </p>
+            
+            <h1 style="font-size: large;">
+                <i>Mitigation Strategies</i>
+            </h1>
+            
+            <p>
+                <strong>Resampling Techniques:</strong> Over-sampling the minority class or under-sampling the majority class can help balance the dataset.
+            </p>
+            
+            <p>
+                <strong>Synthetic Data Generation:</strong> Techniques like SMOTE (Synthetic Minority Over-sampling Technique) can be used to create synthetic instances of the minority class to balance the dataset.
+            </p>
+            
+            <p>
+                <strong>Different Algorithms:</strong> Some algorithms are inherently better at handling imbalanced data. For example, ensemble methods like Random Forests and gradient boosting often perform well in such scenarios.
+            </p>
+            
+            <p>
+                <strong>Cost-sensitive Learning:</strong> Assigning different misclassification costs to different classes can be employed to make the model more sensitive to the minority class.
+            </p>
+            
+        </p>
+    
+              </article>
+      </section>
+      <section>
+        <input type="image" class="front-image-img" src="assets/pics/index/front.png" alt="girl sitting on the mountain top" />
+        <article>
+          <h1><strong>What is CNN and Gradient Boosting?</strong></h1>
+          <hr />
+          <p>
+            A CNN, or Convolutional Neural Network, is a type of artificial neural network designed for processing and analyzing visual data. CNNs have proven to be highly effective in tasks related to computer vision, image and video recognition, and various other visual data analysis applications. They are particularly well-suited for tasks where the input data has a grid-like topology, such as images.
+            These layers apply convolutional operations to the input data, using filters or kernels that slide over the input to extract local patterns and features. Convolutional layers are responsible for capturing hierarchical representations of visual features.
+          </p>
+          <p>
+
+
+              Gradient boosting is a machine learning technique for building predictive models, particularly for regression and classification problems. It is an ensemble learning method, meaning it combines the predictions of multiple weak learners (typically decision trees) to create a strong predictive model.
+  
+                  <p>
+                      The basic idea behind gradient boosting can be summarized as follows:
+                  </p>
+  
+                  <p>
+                      <strong>1. Weak Learners:</strong> Gradient boosting starts with a weak learner, often a shallow decision tree. This initial model is trained on the dataset, and its predictions are used as the first approximation.
+                  </p>
+  
+                  <p>
+                      <strong>2. Residuals:</strong> The difference between the actual values and the predictions made by the weak learner (residuals) is calculated. The goal is to improve upon these residuals in the next iteration.
+                  </p>
+  
+                  <p>
+                      <strong>3. Gradient Descent:</strong> In the subsequent iterations, new weak learners are added to the ensemble, and each one focuses on correcting the errors (residuals) made by the previous models. This is done by using gradient descent to minimize the loss function, which measures the difference between the predicted and actual values.
+                  </p>
+  
+                  <p>
+                      <strong>4. Weighted Sum:</strong> The predictions from all weak learners are combined into a weighted sum, where each learner's contribution is determined by its performance in reducing the overall error.
+                  </p>
+  
+                  <p>
+                      <strong>5. Boosting:</strong> The process is repeated for a predefined number of iterations or until a certain level of accuracy is achieved. Each new weak learner "boosts" the overall model's performance by addressing the mistakes of the previous learners.
+                  </p>
+              </article>
+            </p>
+            
+      </section>
+
+  
+
+
+
+
+
+
+
+
+
+    <p class="section-p" id="phrase">It is not the strongest of the species that survives, nor the most intelligent, but the one most adaptable to change.</p>
+
+    <footer class="footer"></footer>
+    <script src="js/footer.js"></script>
+    <script src="https://kit.fontawesome.com/b75e76cb79.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

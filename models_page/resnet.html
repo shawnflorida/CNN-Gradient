@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResNet50</title>
+    <link rel="icon" type="image/x-icon" href="/assets/pics/title-logo.png">
+    <link href="/css/nav.css" rel="stylesheet" type="text/css" />
+    <link href="/css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="/css/resnet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <nav class="navbar"></nav>
+    <script src="/js/nav.js"></script>
+
+    <div class="main-container">
+        <div class="model-contents">
+            <section id="model-desc">
+                <h1 class="section-title">ResNet50</h1>
+                <hr>
+                <img src="/assets/pics/model/resnet/resnet_archi.png" alt="Resnet50 Architecture">
+                <p>
+                    ResNet50, short for Residual Network with 50 layers, is a deep convolutional neural network (CNN) architecture that was introduced by Microsoft Research in their paper titled "Deep Residual Learning for Image Recognition" in 2015. This architecture is part of the ResNet family, which includes variations with different depths, such as ResNet18, ResNet34, ResNet101, and ResNet152.
+                </p>
+                <p>
+                    The main motivation behind the development of ResNet was to address the challenges  of training very deep neural networks. As the depth of a neural network increases, the vanishing gradient problem becomes more prominent, hindering the optimization process. This problem arises when gradients during backpropagation diminish as they are propagated back through the layers, making it difficult to update the weights of the earlier layers and impeding the learning process.
+                </p>
+                <p>
+                    ResNet addresses this issue by introducing a novel concept called "residual learning." Instead of trying to learn the direct mapping of input to output, ResNet learns the residual, or the difference between the input and the desired output. This is achieved through the use of "residual blocks" or "identity blocks," which consist of skip connections, also known as shortcut connections or skip connections. These connections allow the gradient to bypass one or more layers during backpropagation, facilitating the flow of information and mitigating the vanishing gradient problem.
+                </p>
+                <p>
+                    The ResNet50 architecture specifically has 50 layers, consisting of a series of residual blocks. Each residual block typically contains two or three convolutional layers along with batch normalization and rectified linear unit (ReLU) activation functions. The skip connections in ResNet50 are implemented as shortcuts that skip one or two layers.
+                </p>
+            </section>
+            
+
+            <section id="model-purpose">
+                <h1 class="section-title">ResNet50 for Hand Feature Extraction</h1>
+                <hr>
+                <p>
+                The Convolutional Neural Network (CNN) architecture ResNet-50 was employed as a pivotal component to extract intricate hand features for sign language recognition. The primary motivation behind the selection of ResNet-50 lies in its ability to effectively capture hierarchical features from images, making it well-suited for complex visual recognition tasks. The researchers pre-processed a dataset of Filipino Sign Language gestures, acknowledging the inherent challenge of data set imbalance in sign language recognition scenarios. The ResNet-50 architecture, comprising 50 layers of residual blocks, was utilized to facilitate the learning process, particularly addressing the vanishing gradient problem associated with deep neural networks. Each residual block, incorporating multiple convolutional layers, batch normalization, and rectified linear unit (ReLU) activation functions, played a crucial role in extracting discriminative features from the hand gestures. The incorporation of ResNet-50 allowed the model to learn not only the direct mappings between input and output but also the residuals, thereby enhancing the robustness of the recognition system. The study integrated the ResNet-50 features into a broader framework that utilized Gradient Boosting to further enhance the model's predictive performance, effectively mitigating data set imbalance issues in Filipino Sign Language recognition.
+                </p>
+            </section>
+
+            <div class="container">
+                <section class="metrics">
+                    <h1 class="section-title">ResNet50 Metrics</h1>
+
+                    <div class="metrics-container">
+                        <div class="inner-con1">
+                            <div class="card">
+                                <h3>Accuracy</h3>
+                                <p id="accuracy"></p>
+                            </div>
+                        </div>
+                        <div class="inner-con2">
+                            <table class="table-metrics">
+                                <thead>
+                                    <tr>
+                                        <th>Class</th>
+                                        <th>Precision</th>
+                                        <th>Recall</th>
+                                        <th>F1 Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="class"></td>
+                                        <td id="precision"></td>
+                                        <td id="recall"></td>
+                                        <td id="f1Score"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="inner-con3">
+                            <div class="card">
+                                <h3>Precision Avg</h3>
+                                <p id="precisionAvg"></p>
+                            </div>
+                            <div class="card">
+                                <h3>Recall Avg</h3>
+                                <p id="recallAvg"></p>
+                            </div>
+                            <div class="card">
+                                <h3>F1 Score Avg</h3>
+                                <p id="f1ScoreAvg"></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="matrix">
+                        <h1 class="section-title">Confusion Matrix</h1>
+                        <img id="confusionMatrixImage" class="matrix" type="image" alt="confusion matrix">
+                </section>
+            </div>
+
+            <div class="gallery">
+                <h1 class="section-title">ResNet50 Predictions</h1>
+                <div class="line"></div>
+                <div>
+                    <h1 class="section-title" id="gallery-title">Correct Predictions</h1>
+                    <div id="correctGallery" class="gallery-container"></div>
+                </div>
+                <div>
+                    <h1 class="section-title" id="gallery-title">Wrong Predictions</h1>
+                    <div id="wrongGallery" class="gallery-container"></div>
+                </div>
+            
+                <script src="/js/resnet.js"></script>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <footer class="footer"></footer>
+    <script src="/js/footer.js"></script>
+    <script src="https://kit.fontawesome.com/b75e76cb79.js" crossorigin="anonymous"></script>
+</body>
+</html>
