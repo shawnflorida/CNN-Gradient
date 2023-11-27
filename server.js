@@ -37,7 +37,6 @@ app.get("/api/images", (req, res) => {
   }
 
   predictionFolders.forEach((predictionFolder) => {
-    // Define the 14 subfolders
     const subfolders = [
       "afternoon",
       "are",
@@ -54,10 +53,8 @@ app.get("/api/images", (req, res) => {
       "understand",
       "you",
     ];
-    console.log(subfolders)
-
+  
     subfolders.forEach((subfolder) => {
-      // Get the list of files in the subfolder for the specified model
       const folderPath = path.join(
         __dirname,
         "kpi",
@@ -65,32 +62,25 @@ app.get("/api/images", (req, res) => {
         predictionFolder,
         subfolder
       );
-      const files = fs.readdirSync(folderPath);
-
-      // Function to get a random subset of files
-      function getRandomFiles(files, count) {
-        const shuffled = files.sort(() => 0.5 - Math.random());
-        const selectedCount = Math.min(count, shuffled.length);
-        return shuffled.slice(0, selectedCount);
+  
+      try {
+        // Check if the directory exists
+        if (fs.statSync(folderPath).isDirectory()) {
+          const files = fs.readdirSync(folderPath);
+          const selectedFiles = getRandomFiles(files, 3);
+  
+          const imagePaths = selectedFiles.map((file) =>
+            path.join("kpi", `predictions_${modelName}`, predictionFolder, subfolder, file).replace(/\\/g, "/")
+          );
+  
+          images.push(...imagePaths);
+        } else {
+          console.log(`Directory does not exist: ${folderPath}`);
+          // You can choose to skip or handle this case as needed
+        }
+      } catch (err) {
+        console.error(`Error checking directory: ${err}`);
       }
-
-      const selectedFiles = getRandomFiles(files, 3); // Randomly select up to 3 files, but potentially fewer if there are not enough files available
-
-      // Create relative paths for the selected files (without the base path)
-      const imagePaths = selectedFiles.map((file) =>
-        path
-          .join(
-            "kpi",
-            `predictions_${modelName}`,
-            predictionFolder,
-            subfolder,
-            file
-          )
-          .replace(/\\/g, "/")
-      );
-
-      // Add the image paths to the result array
-      images.push(...imagePaths);
     });
   });
 
@@ -146,6 +136,12 @@ app.get("/gradient.html", (req, res) => {
 app.get("/smote.html", (req, res) => {
   res.sendFile(path.join(__dirname, "models_page", "smote.html"));
 });
+
+app.get("/tool.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "models_page", "tool.html"));
+});
+
+
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
