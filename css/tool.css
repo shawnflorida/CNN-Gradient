@@ -27,7 +27,9 @@ body {
   color: #3498db; /* Text color */
   background-color: #fff; /* Background color */
 }
-
+.column-container {
+  display: flex;
+}
 /* Change the button styles on hover */
 .start {
   background-color: #3498db; /* Background color on hover */

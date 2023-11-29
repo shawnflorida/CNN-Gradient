@@ -72,10 +72,20 @@ async function predict() {
   // Display the highest prediction for ResNet model with yellow shadow
   displayHighestPrediction(predictionResnet, resnetContainer, "resnet", "yellow");
 }
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 function displayHighestPrediction(predictions, container, modelName, color) {
   let highestProbability = 0;
   let highestIndex = 0;
+
+  // Add title for the model
+  const modelTitle = document.createElement("div");
+  modelTitle.textContent = `${capitalizeFirstLetter(modelName)} Predictions`; // Capitalize the model name
+  modelTitle.classList.add("model-title");
+  container.appendChild(modelTitle);
+  modelTitle.style.fontWeight = "Bold";  // You can adjust the size as needed
 
   predictions.forEach((result, i) => {
     const barContainer = document.createElement("div");
@@ -99,6 +109,9 @@ function displayHighestPrediction(predictions, container, modelName, color) {
       highestIndex = i;
     }
   });
+
+
+
 
   // Get the color of the highest probability class
   const highestPredictionColor = classColors[highestIndex];

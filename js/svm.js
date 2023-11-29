@@ -49,7 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("class").innerText = Object.keys(class_mapping)
         .map((className) => className)
         .join("\n");
-    })
+    }
+    )
     .catch((error) => console.error("Error fetching metrics data:", error));
 
   // Function to format a number to three decimal places

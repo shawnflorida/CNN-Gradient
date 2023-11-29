@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       you: 13,
     };
    
-    fetch("/kpi/website/assets/metrics/smote_metrics.json")
-      .then((response) => response.json())
+    fetch("/kpi/website/assets/metrics/smote_metrics.json")      .then((response) => response.json())
       .then((data) => {
         // Display metrics on the webpage
         document.getElementById("accuracy").innerText = formatDecimal(

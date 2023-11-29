@@ -8,10 +8,8 @@ const port = 3000;
 // Serve static files
 app.use("/css", express.static(path.join(__dirname, "css")));
 app.use("/js", express.static(path.join(__dirname, "js")));
-app.use(
-  "/kpi/website/assets/metrics",
-  express.static(path.join(__dirname, "assets", "metrics"))
-);
+app.use("/kpi/website/assets/metrics", express.static(path.join(__dirname, "assets", "metrics")));
+
 app.use("/assets/pics", express.static(path.join(__dirname, "assets", "pics")));
 app.use(
   "/assets/graphs",
