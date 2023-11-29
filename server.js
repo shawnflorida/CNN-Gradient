@@ -67,7 +67,7 @@ app.get("/api/images", (req, res) => {
         // Check if the directory exists
         if (fs.statSync(folderPath).isDirectory()) {
           const files = fs.readdirSync(folderPath);
-          const selectedFiles = getRandomFiles(files, 3);
+          const selectedFiles = getRandomFiles(files, 6);
   
           const imagePaths = selectedFiles.map((file) =>
             path.join("kpi", `predictions_${modelName}`, predictionFolder, subfolder, file).replace(/\\/g, "/")

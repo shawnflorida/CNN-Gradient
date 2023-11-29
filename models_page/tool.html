@@ -16,24 +16,31 @@
   <body>
     <nav class="navbar"></nav>
 
+    <button class="start" type="button" onclick="init()">Start</button>
 
-    <button type="button" onclick="init()">Start</button>
+    <div class="mother-container" onload="init()">
+      <div class="child-container"></div>
 
-    <div style="display: flex">
       <div id="webcam-container"></div>
       <div id="label-container-resnet"></div>
       <div id="label-container-gradient"></div>
     </div>
+    <div class="gallery">
+      <h1 class="section-title">Sign Language References</h1>
+      <div class="line"></div>
+      <div>
+        <h1 class="section-title" id="gallery-title"></h1>
+        <div id="correctGallery" class="gallery-container"></div>
+      </div>
+
+      <script src="/js/gradient.js"></script>
+    </div>
 
     <script src="../js/detection.js"></script>
-    <script src="../js/functionPrediction.js"></script>
+
+    <script src="../js/tool.js"></script>
 
     <footer class="footer"></footer>
-
-
-
-
-
 
     <script src="/js/nav.js"></script>
 

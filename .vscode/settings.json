@@ -1,0 +1,8 @@
+{
+    "python.analysis.extraPaths": [
+        "./testers",
+        "./components",
+        "./kpi/components",
+        "./kpi/testers"
+    ]
+}

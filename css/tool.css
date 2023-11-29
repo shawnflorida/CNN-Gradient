@@ -4,18 +4,41 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 50vh;
-  margin: 0;
 }
 
 #webcam-container {
-  margin-bottom: 20px;
   width: 90vw; /* Set the desired width (50% of viewport width) */
   height: 80vw; /* Set the desired height (50% of viewport width) */
-  max-width: 700px; /* Set a maximum width if needed */
-  max-height: 700px; /* Set a maximum height if needed */
+  max-width: 680px; /* Set a maximum width if needed */
+  max-height: 680px; /* Set a maximum height if needed */
   overflow: hidden;
-  border: 5px solid #333;
-  border-radius: 10px;
+}
+
+.start {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #3498db; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  color: #3498db; /* Text color */
+  background-color: #fff; /* Background color */
+}
+
+/* Change the button styles on hover */
+.start {
+  background-color: #3498db; /* Background color on hover */
+  color: #fff; /* Text color on hover */
+  display: none;
+}
+
+.mother-container {
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 100px;
 }
 
 #webcam-container video {
@@ -46,4 +69,22 @@ body {
   margin-top: 5px;
   font-size: 14px;
   display: block;
+}
+
+#label-container-gradient {
+  display: none;
+}
+#label-container-resnet {
+  display: none;
+}
+#container-wrapper {
+  display: flex;
+}
+
+#label-container-resnet,
+#label-container-gradient {
+  background-color: #fff; /* Grey background color */
+  padding: 20px; /* Adjust the padding as needed */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  margin-left: 30px;
 }

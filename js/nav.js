@@ -17,10 +17,6 @@ const createNav = () => {
             </ul>
           </li>
           <li><a href="/tool.html">Tool</a></li>
-          <li><a href="/background.html">Background</a></li>
-          <li><a href="/thesis.html">Thesis Study</a></li>
-          <li><a href="/dataset.html">Dataset</a></li>
-          <li><a href="/researchers.html">Researchers</a></li>
         </ul>
       </div>
     </div>
