@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vercingetorix. | Tool</title>
+    <link rel="icon" type="image/x-icon" href="/assets/pics/title-logo.png" />
+    <link href="/css/nav.css" rel="stylesheet" type="text/css" />
+    <link href="/css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="/css/smote.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+
+    <link href="/css/tool.css" rel="stylesheet" type="text/css" />
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+  
+      th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+
+
+  <body>
+    <nav class="navbar"></nav>
+
+    <div class="gallery">
+      <h1 class="section-title">
+        Resnet50 Result in Brain Tumor and Alzheimer's Data
+      </h1>
+      <div class="line"></div>
+      <table>
+        <tr>
+          <th>Metric</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>resnet_other</td>
+        </tr>
+        <tr>
+          <td>Accuracy</td>
+          <td>80%</td>
+        </tr>
+        <tr>
+          <td>Precision Avg</td>
+          <td>61%</td>
+        </tr>
+        <tr>
+          <td>Recall Avg</td>
+          <td>63%</td>
+        </tr>
+        <tr>
+          <td>F1 Score Avg</td>
+          <td>61%</td>
+        </tr>
+      </table>
+
+      <div>
+        <h1 class="section-title" id="gallery-title">Correct Predictions</h1>
+        <div id="correctGalleryResnet" class="gallery-container"></div>
+      </div>
+      <div>
+        <h1 class="section-title" id="gallery-title">Wrong Predictions</h1>
+        <div id="wrongGalleryResnet" class="gallery-container"></div>
+      </div>
+    </div>
+    <div class="gallery">
+      <h1 class="section-title">
+        Gradient Result in Brain Tumor and Alzheimer's Data
+      </h1>
+
+      <div class="line"></div>
+      <table>
+        <tr>
+          <th>Metric</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>gradient_other</td>
+        </tr>
+        <tr>
+          <td>Accuracy</td>
+          <td>87%</td>
+        </tr>
+    
+        </tr>
+        <tr>
+          <td>Precision Avg</td>
+          <td>79%</td>
+        </tr>
+        <tr>
+          <td>Recall Avg</td>
+          <td>76%</td>
+        </tr>
+        <tr>
+          <td>F1 Score Avg</td>
+          <td>76.3%</td>
+        </tr>
+      </table>
+      <div>
+        <h1 class="section-title" id="gallery-title">Correct Predictions</h1>
+        <div id="correctGalleryGradient" class="gallery-container"></div>
+      </div>
+      <div>
+        <h1 class="section-title" id="gallery-title">Wrong Predictions</h1>
+        <div id="wrongGalleryGradient" class="gallery-container"></div>
+      </div>
+    </div>
+
+    <script src="/js/medical.js"></script>
+
+    <script src="../js/detection.js"></script>
+    <script src="../js/tool.js"></script>
+    <footer class="footer"></footer>
+    <script src="/js/nav.js"></script>
+
+    <script src="/js/footer.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/b75e76cb79.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -2,23 +2,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load metrics data
 
   class_mapping = {
-    afternoon: 0,
-    are: 1,
-    evening: 2,
-    good: 3,
-    hard: 4,
-    hello: 5,
-    how: 6,
-    morning: 7,
-    "of-hearing": 8,
-    thank: 9,
-    today: 10,
-    tomorrow: 11,
-    understand: 12,
-    you: 13,
+    glioma: 0,
+    meningioma: 1,
+    notumor: 2,
+    pituitary: 3,
+    mild_demented: 4,
+    moderate_demented: 5,
+    non_demented: 6,
+    very_mild_demented: 7,
   };
-  fetch("/kpi/website/assets/metrics/resnet_metrics.json")
-  .then((response) => response.json())
+  fetch("/kpi/website/assets/metrics/gradient_others_metrics.json")
+    .then((response) => response.json())
     .then((data) => {
       // Display metrics on the webpage
       document.getElementById("accuracy").innerText = formatDecimal(
@@ -56,9 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function formatDecimal(number) {
     return number.toFixed(3);
   }
-
   // Define the model name (replace 'resnet' with the desired model name)
-  const modelName = "resnet";
+  const modelName = "gradient";
 
   // Load confusion matrix image dynamically based on the model name
   fetch(`/api/confusion-matrix-image/${modelName}`)
@@ -80,8 +73,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //For gallery
 document.addEventListener("DOMContentLoaded", function () {
-  const correctGallery = document.getElementById("correctGallery");
-  const wrongGallery = document.getElementById("wrongGallery");
+  const correctGallery = document.getElementById("correctGalleryGradient");
+  const wrongGallery = document.getElementById("wrongGalleryGradient");
+
+  // Specify the model name (e.g., 'resnet', 'svm', 'smote', 'gradient')
+  const modelName = "gradient";
+
+  // Fetch images dynamically for correct predictions
+  fetch(`/api/images?prediction=correct_prediction&model=${modelName}`)
+    .then((response) => response.json())
+    .then((images) => {
+      // Display images for each folder on a new row in the correct gallery
+      displayImagesInGrid(images, correctGallery);
+    })
+    .catch((error) =>
+      console.error(
+        `Error fetching images for correct predictions of ${modelName}:`,
+        error
+      )
+    );
+
+  // Fetch images dynamically for wrong predictions
+  fetch(`/api/images?prediction=wrong_prediction&model=${modelName}`)
+    .then((response) => response.json())
+    .then((images) => {
+      // Display images for each folder on a new row in the wrong gallery
+      displayImagesInGrid(images, wrongGallery);
+    })
+    .catch((error) =>
+      console.error(
+        `Error fetching images for wrong predictions of ${modelName}:`,
+        error
+      )
+    );
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const correctGallery = document.getElementById("correctGalleryResnet");
+  const wrongGallery = document.getElementById("wrongGalleryResnet");
 
   // Specify the model name (e.g., 'resnet', 'svm', 'smote', 'gradient')
   const modelName = "resnet";
@@ -115,18 +145,22 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 });
 
-// Function to display images in a grid with each folder on a new row
+
+
 function displayImagesInGrid(images, gallery) {
   let currentRow;
   let currentFolder;
+
+  // List of classes to exclude
+  const excludedClasses = ["afternoon", "are", "evening", "good", "hard", "hello", "how", "morning", "of-hearing", "thank", "today", "tomorrow", "understand", "you"];
 
   // Iterate over images and create a new row for each folder
   images.forEach((image, index) => {
     // Extract folder name from the image path
     const folderTitle = getFolderTitle(image);
 
-    // Skip medical classes
-    if (!isMedicalClass(folderTitle)) {
+    // Skip excluded classes
+    if (!isExcludedClass(folderTitle)) {
       // Start a new row for the next folder
       if (currentFolder !== folderTitle) {
         currentFolder = folderTitle;
@@ -149,14 +183,13 @@ function displayImagesInGrid(images, gallery) {
   });
 }
 
-// Function to check if the class is a medical class
-function isMedicalClass(className) {
-  // List of medical classes to exclude
-  const medicalClasses = ["glioma", "meningioma", "notumor", "pituitary", "mild_demented", "moderate_demented", "non_demented", "very_mild_demented"];
+// Function to check if the class is an excluded class
+function isExcludedClass(className) {
+  // List of classes to exclude
+  const excludedClasses = ["afternoon", "are", "evening", "good", "hard", "hello", "how", "morning", "of-hearing", "thank", "today", "tomorrow", "understand", "you"];
 
-  return medicalClasses.includes(className);
+  return excludedClasses.includes(className);
 }
-
 
 // Function to extract folder title from the image path
 function getFolderTitle(imagePath) {

@@ -123,27 +123,37 @@ function displayImagesInGrid(images, gallery) {
     // Extract folder name from the image path
     const folderTitle = getFolderTitle(image);
 
-    // Start a new row for the next folder
-    if (currentFolder !== folderTitle) {
-      currentFolder = folderTitle;
-      currentRow = document.createElement("div");
-      currentRow.classList.add("image-row");
-      gallery.appendChild(currentRow);
+    // Skip medical classes
+    if (!isMedicalClass(folderTitle)) {
+      // Start a new row for the next folder
+      if (currentFolder !== folderTitle) {
+        currentFolder = folderTitle;
+        currentRow = document.createElement("div");
+        currentRow.classList.add("image-row");
+        gallery.appendChild(currentRow);
 
-      // Display folder title before the images
-      const titleElement = document.createElement("h4");
-      titleElement.innerText = currentFolder;
-      currentRow.appendChild(titleElement);
+        // Display folder title before the images
+        const titleElement = document.createElement("h4");
+        titleElement.innerText = currentFolder;
+        currentRow.appendChild(titleElement);
+      }
+
+      // Create image element and add to the current row
+      const imgElement = document.createElement("img");
+      imgElement.src = image;
+      imgElement.classList.add("gallery-image");
+      currentRow.appendChild(imgElement);
     }
-
-    // Create image element and add to the current row
-    const imgElement = document.createElement("img");
-    imgElement.src = image;
-    imgElement.classList.add("gallery-image");
-    currentRow.appendChild(imgElement);
   });
 }
 
+// Function to check if the class is a medical class
+function isMedicalClass(className) {
+  // List of medical classes to exclude
+  const medicalClasses = ["glioma", "meningioma", "notumor", "pituitary", "mild_demented", "moderate_demented", "non_demented", "very_mild_demented"];
+
+  return medicalClasses.includes(className);
+}
 // Function to extract folder title from the image path
 function getFolderTitle(imagePath) {
   // Split the path by '/'

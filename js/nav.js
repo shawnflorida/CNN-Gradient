@@ -1,5 +1,5 @@
 const createNav = () => {
-  let nav = document.querySelector('.navbar');
+  let nav = document.querySelector(".navbar");
   nav.innerHTML = `
     <nav>
     <div>
@@ -17,11 +17,13 @@ const createNav = () => {
             </ul>
           </li>
           <li><a href="/tool.html">Tool</a></li>
+          <li><a href="/medical.html">Medical Dataset</a></li>
+
         </ul>
       </div>
     </div>
   </nav>
     `;
-}
+};
 
 createNav();

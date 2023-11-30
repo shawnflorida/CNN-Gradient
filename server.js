@@ -50,6 +50,14 @@ app.get("/api/images", (req, res) => {
       "tomorrow",
       "understand",
       "you",
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary",
+      "mild_demented",
+      "moderate_demented",
+      "non_demented",
+      "very_mild_demented",
     ];
   
     subfolders.forEach((subfolder) => {
@@ -139,6 +147,9 @@ app.get("/tool.html", (req, res) => {
   res.sendFile(path.join(__dirname, "models_page", "tool.html"));
 });
 
+app.get("/medical.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "models_page", "medical.html"));
+});
 
 
 app.listen(port, () => {
